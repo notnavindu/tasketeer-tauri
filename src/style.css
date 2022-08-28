@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("opentype");
+  font-weight: 100 900;
+}
+
+html {
+  @apply bg-black text-white;
+}
+
+body {
+  font-family: "Raleway";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #303030;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 80, 117);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 92, 104);
+}
