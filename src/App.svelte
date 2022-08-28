@@ -10,6 +10,7 @@
   import Clock from "./lib/Icons/clock.icon.svelte";
   import { nanoid } from "nanoid";
   import dayjs from "dayjs";
+  import { appWindow } from "@tauri-apps/api/window";
 
   import { fly } from "svelte/transition";
 
@@ -136,12 +137,18 @@
 >
   <div class="text-3xl pointer-events-none">Todos</div>
   <div class="flex gap-2">
-    <div class="w-3 h-3 rounded-full bg-[#FBBC05]" />
-    <div class="w-3 h-3 rounded-full bg-[#EA4335]" />
+    <div
+      class="w-3 h-3 rounded-full bg-[#FBBC05] cursor-pointer"
+      on:click={() => appWindow.minimize()}
+    />
+    <div
+      class="w-3 h-3 rounded-full bg-[#EA4335] cursor-pointer"
+      on:click={() => appWindow.close()}
+    />
   </div>
 </div>
 
-<main class="p-5">
+<main class="p-5" data-tauri-drag-region>
   <div use:clickOutside on:click_outside={unfocusInput} on:click={focusInput}>
     <div class="flex animate items-center gap-2">
       <input
@@ -283,7 +290,9 @@
         </div>
 
         <div class="w-full flex justify-between group">
-          <div class="text-sm opacity-80 leading-tight">{task.title}</div>
+          <div class="text-sm opacity-80 leading-tight line-through">
+            {task.title}
+          </div>
 
           <div
             class="opacity-0 group-hover:opacity-50 cursor-pointer text-lg leading-none tracking-tighter relative"

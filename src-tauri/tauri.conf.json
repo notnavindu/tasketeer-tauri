@@ -19,7 +19,9 @@
         "all": true
       },
       "window": {
-        "startDragging": true
+        "startDragging": true,
+        "minimize": true,
+        "close": true
       }
     },
     "bundle": {
