@@ -124,6 +124,10 @@
       console.log(e);
     }
   };
+
+  const deleteTask = (id) => {
+    tasks = tasks.filter((t) => t.id != id);
+  };
 </script>
 
 <div
@@ -184,13 +188,26 @@
         in:fly={{ y: 20, delay: taskInitialDelay + taskStaggerOffset * i }}
       >
         <div
-          class="w-3 h-3 flex-shrink-0"
+          class="w-3 h-3 flex-shrink-0 cursor-pointer"
           on:click={() => moveTask(task.id, "inprogress")}
           style="background-color: {task.color};"
         />
 
-        <div class="flex flex-col ">
-          <div class="text-sm opacity-80 leading-tight">{task.title}</div>
+        <div class="w-full group flex flex-col ">
+          <div
+            class=" w-full text-sm opacity-80 leading-tight flex justify-between items-center"
+          >
+            <div>
+              {task.title}
+            </div>
+
+            <div
+              class="opacity-0 group-hover:opacity-50 cursor-pointer text-lg leading-none tracking-tighter relative"
+              on:click={() => deleteTask(task.id)}
+            >
+              ×
+            </div>
+          </div>
 
           <div class="text-xs opacity-50">
             {#if task.deadline}
@@ -213,13 +230,26 @@
         in:fly={{ y: 50, delay: taskInitialDelay + taskStaggerOffset * i }}
       >
         <div
-          class="w-3 h-3 flex-shrink-0 animate-pulse rounded-full"
+          class="w-3 h-3 flex-shrink-0 animate-pulse rounded-full cursor-pointer"
           style="background-color: {task.color};"
           on:click={() => moveTask(task.id, "done")}
         />
 
-        <div class="flex flex-col ">
-          <div class="text-sm opacity-80 leading-tight">{task.title}</div>
+        <div class="group w-full flex flex-col ">
+          <div
+            class=" w-full text-sm opacity-80 leading-tight flex justify-between items-center"
+          >
+            <div>
+              {task.title}
+            </div>
+
+            <div
+              class="opacity-0 group-hover:opacity-50 cursor-pointer text-lg leading-none tracking-tighter relative"
+              on:click={() => deleteTask(task.id)}
+            >
+              ×
+            </div>
+          </div>
 
           <div class="text-xs opacity-50">
             {#if task.deadline}
@@ -235,9 +265,9 @@
 
   <div class="mb-10">
     <div class="mt-10 font-bold mb-1 animate">
-      done <span class="font-thin opacity-40"
-        >({tasks.filter((t) => t.status === "done").length})</span
-      >
+      done <span class="font-thin opacity-40">
+        ({tasks.filter((t) => t.status === "done").length})
+      </span>
     </div>
 
     {#each tasks.filter((t) => t.status === "done") as task, i}
@@ -252,8 +282,15 @@
           ▲
         </div>
 
-        <div class="flex flex-col ">
+        <div class="w-full flex justify-between group">
           <div class="text-sm opacity-80 leading-tight">{task.title}</div>
+
+          <div
+            class="opacity-0 group-hover:opacity-50 cursor-pointer text-lg leading-none tracking-tighter relative"
+            on:click={() => deleteTask(task.id)}
+          >
+            ×
+          </div>
         </div>
       </div>
     {/each}
