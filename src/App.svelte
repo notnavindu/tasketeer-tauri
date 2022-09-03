@@ -109,6 +109,7 @@
 
     await saveToDisk();
     value = "";
+    date = null;
   };
 
   const moveTask = async (id, nextStatus) => {
@@ -128,6 +129,7 @@
 
   const deleteTask = (id) => {
     tasks = tasks.filter((t) => t.id != id);
+    saveToDisk();
   };
 </script>
 
@@ -135,7 +137,7 @@
   class="px-5 pt-5  flex justify-between items-center"
   data-tauri-drag-region
 >
-  <div class="text-3xl pointer-events-none">Todos</div>
+  <div class="text-3xl pointer-events-none">🗡️ Tasketeer</div>
   <div class="flex gap-2">
     <div
       class="w-3 h-3 rounded-full bg-[#FBBC05] cursor-pointer"

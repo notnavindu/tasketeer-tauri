@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tauri-todos",
+    "productName": "tasketeer",
     "version": "0.0.0"
   },
   "tauri": {
@@ -39,7 +39,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.navindu.taudos",
+      "identifier": "com.navindu.tasketeer",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -66,9 +66,9 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 700,
+        "height": 600,
         "resizable": true,
-        "title": "tauri-todos",
+        "title": "Tasketeer",
         "width": 320,
         "decorations": false
       }

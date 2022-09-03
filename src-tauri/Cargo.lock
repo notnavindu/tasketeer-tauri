@@ -2440,6 +2440,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tasketeer-tauri"
+version = "1.0.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+]
+
+[[package]]
 name = "tauri"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2577,16 +2587,6 @@ dependencies = [
  "webview2-com",
  "windows 0.37.0",
  "wry",
-]
-
-[[package]]
-name = "tauri-todos"
-version = "0.0.0"
-dependencies = [
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
 ]
 
 [[package]]

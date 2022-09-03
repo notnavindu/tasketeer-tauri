@@ -1,8 +1,8 @@
 [package]
-name = "tauri-todos"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "tasketeer-tauri"
+version = "1.0.0"
+description = "A No-BS task app"
+authors = ["navindu"]
 license = ""
 repository = ""
 edition = "2021"
