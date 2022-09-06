@@ -10,6 +10,10 @@
   <img src='./docs/demo.gif'>
 </div>
 
+## Download
+
+Get the latest release from [here](https://github.com/notnavindu/tasketeer-tauri/releases/)
+
 ## Features
 
 - Manage tasks. nothing more. nothing less
