@@ -7,7 +7,7 @@
 <div align="center">
   <h1>Tasketeer</h1>
   <h3>A no-BS, lightweight task app. No fancy, useless features.</h3>
-  <video src='./docs/clip.mp4' width="180" autoplay />
+  <video src='./docs/clip.mp4' width="180" autoplay></video>
 </div>
 
 ## Features
