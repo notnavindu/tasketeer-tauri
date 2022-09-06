@@ -173,7 +173,7 @@
       </div>
 
       <div
-        class="w-8 h-8  bg-zinc-800 flex items-center justify-center"
+        class="w-8 h-8  bg-zinc-800 flex items-center justify-center cursor-pointer"
         on:click={createTask}
       >
         <span class="opacity-50">✓</span>
